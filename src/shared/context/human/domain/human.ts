@@ -11,6 +11,7 @@ export interface HumanCreateProps extends Omit<HumanPrimitive, 'is_mutant'> {
 
 export class Human {
   id: string;
+  dna: string[];
   is_mutant: boolean;
 
   private constructor({ id, dna }: HumanCreateProps) {
@@ -19,6 +20,7 @@ export class Human {
     const dnaList = dna.map(value => new DnaValueObject(value.toLowerCase()).getValue());
 
     this.is_mutant = this.isMutant(dnaList);
+    this.dna = dna;
   }
 
   public static create(human: HumanCreateProps) {

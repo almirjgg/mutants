@@ -13,10 +13,10 @@ export class PostCreateHumanController {
       const isMutant: boolean = await this.createHumanService.run({ id: entityId, dna });
 
       if (isMutant) {
-        res.status(201).json({ id: entityId, is_mutant: isMutant });
+        res.status(201).json({ id: entityId, is_mutant: isMutant, dna });
         return;
       } else {
-        res.status(200).json({ id: entityId, is_mutant: isMutant });
+        res.status(200).json({ id: entityId, is_mutant: isMutant, dna });
         return;
       }
     } catch (error) {

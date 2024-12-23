@@ -1,4 +1,4 @@
-import { Human, HumanCreateProps } from '../domain/human';
+import { Human } from '../domain/human';
 import { HumanRepository } from '../domain/human-repository';
 
 interface CreateHumanServiceDTO {

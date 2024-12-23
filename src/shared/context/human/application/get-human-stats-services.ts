@@ -12,7 +12,7 @@ export class GetHumansStatsService {
   public async run(): Promise<getHumansStatsServiceResponse> {
     const humans = await this.humanRepository.findAll();
     const countMutantDna = humans.filter(human => human.is_mutant).length;
-    const countHumanDna = humans.filter(human => !human.is_mutant).length;
+    const countHumanDna = humans.length;
     const ratio = countMutantDna / countHumanDna;
 
     return { count_mutant_dna: countMutantDna, count_human_dna: countHumanDna, ratio };
