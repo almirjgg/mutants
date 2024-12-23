@@ -32,7 +32,7 @@ Sigue los pasos a continuación para ejecutar la aplicación en tu entorno local
 1. **Clonar el repositorio**:
 
    ```bash
-   git clone [repositorio]
+   git clone https://github.com/almirjgg/mutants.git
    ```
 
 2. **Instalar las dependencias**:
