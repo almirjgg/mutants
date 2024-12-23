@@ -44,8 +44,16 @@ Sigue los pasos a continuación para ejecutar la aplicación en tu entorno local
 
 3. **Configurar la base de datos**:
 
-   - Crea una base de datos PostgreSQL llamada `meli_challenge_db`.
-   - Ajusta las credenciales de la base de datos en el archivo `shared/configs/db-config.ts`.
+   - Crea una base de datos PostgreSQL llamada `mutant_challenge_db`.
+   - Ajusta las credenciales de la base de datos en el archivo `.env`.
+
+   ```env
+     DB_USERNAME=mutant_challenge
+     DB_PASSWORD=postgres
+     DB_DATABASE=mutant_challenge_db
+   ```
+
+   - Estas mismas credenciales también serán utilizadas por el archivo `docker-compose.yml` para facilitar la configuración del entorno Docker.
 
 4. **Levantar la aplicación en modo desarrollo**:
 
