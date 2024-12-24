@@ -54,4 +54,14 @@ describe('CreateHumanService', () => {
       "Invalid DNA sequence. The string must contain only the characters 'a', 't', 'c', or 'g'.",
     );
   });
+
+  test('Should error human already exists', async () => {
+    const payload = {
+      id: HUMAN_ID_MOCK,
+      dna: DNA_MUTANT_MOCK,
+    };
+    await createHumanService.run(payload);
+
+    await expect(createHumanService.run(payload)).rejects.toThrow('DNA already exist');
+  });
 });

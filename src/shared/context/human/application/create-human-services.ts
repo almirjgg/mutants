@@ -14,7 +14,7 @@ export class CreateHumanService {
 
     const existingHuman = await this.humanRepository.findByDNA(human.dna.join(''));
     if (existingHuman) {
-      throw new Error();
+      throw new Error('DNA already exist');
     }
     await this.humanRepository.save(HumanEntity);
 

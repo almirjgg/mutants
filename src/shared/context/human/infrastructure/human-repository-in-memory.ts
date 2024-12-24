@@ -11,4 +11,8 @@ export class HumanRepositoryInMemory implements HumanRepository {
   async findAll(): Promise<Human[]> {
     return this.humansMemory;
   }
+
+  async findByDNA(dna: string): Promise<boolean> {
+    return this.humansMemory.some(human => human.dna.join('') === dna);
+  }
 }

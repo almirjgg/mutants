@@ -33,4 +33,15 @@ describe('HumanRepositoryInMemory', () => {
 
     expect(humans).toHaveLength(2);
   });
+
+  test('Should find human by dna', async () => {
+    const humanRepository = new HumanRepositoryInMemory();
+    const humanPayload = Human.create({ id: HUMAN_ID_MOCK, dna: DNA_MUTANT_MOCK });
+
+    await humanRepository.save(humanPayload);
+
+    const human = await humanRepository.findByDNA(DNA_MUTANT_MOCK.join(''));
+
+    expect(human).toBe(true);
+  });
 });
