@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --env-file=.env src/api/index.ts",
     "build": "tsc",
-    "start": "node src/api/index.js",
+    "start": "node dist/src/api/index.js",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
