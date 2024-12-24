@@ -18,4 +18,9 @@ export class HumanRepositoryInTypeorm implements HumanRepository {
   async findAll(): Promise<HumanPrimitive[]> {
     return this.humanRepositoryEntity.find();
   }
+
+  async findByDNA(dna: string): Promise<boolean> {
+    const humanEntity = await this.humanRepositoryEntity.findOneBy({ dna });
+    return !!humanEntity;
+  }
 }

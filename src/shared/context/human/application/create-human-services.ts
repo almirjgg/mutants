@@ -11,6 +11,11 @@ export class CreateHumanService {
 
   public async run(human: CreateHumanServiceDTO): Promise<boolean> {
     const HumanEntity = Human.create(human);
+
+    const existingHuman = await this.humanRepository.findByDNA(human.dna.join(''));
+    if (existingHuman) {
+      throw new Error();
+    }
     await this.humanRepository.save(HumanEntity);
 
     return HumanEntity.toPrimitive().is_mutant;
