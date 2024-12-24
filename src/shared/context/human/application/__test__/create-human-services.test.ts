@@ -62,6 +62,6 @@ describe('CreateHumanService', () => {
     };
     await createHumanService.run(payload);
 
-    await expect(createHumanService.run(payload)).rejects.toThrow('DNA already exist');
+    await expect(createHumanService.run(payload)).rejects.toThrowError('DNA already exist');
   });
 });
