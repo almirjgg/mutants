@@ -15,6 +15,10 @@ export class GetHumansStatsService {
     const countHumanDna = humans.length;
     const ratio = countMutantDna / countHumanDna;
 
-    return { count_mutant_dna: countMutantDna, count_human_dna: countHumanDna, ratio };
+    return {
+      count_mutant_dna: countMutantDna,
+      count_human_dna: countHumanDna,
+      ratio: parseFloat(ratio.toFixed(2)),
+    };
   }
 }

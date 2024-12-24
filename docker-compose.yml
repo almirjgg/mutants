@@ -1,8 +1,8 @@
 version: '1.0'
 
 services:
-  meli_db:
-    container_name: 'meli_db'
+  mutant_db:
+    container_name: 'mutant_challenge'
     image: postgres:14-alpine
     restart: always
     environment:
@@ -12,8 +12,8 @@ services:
     ports:
       - '${DB_PORT}:${DB_PORT}'
     volumes:
-      - meli_db:/var/lib/postgresql/data
+      - mutant_db:/var/lib/postgresql/data
     command: postgres -p ${DB_PORT}
 volumes:
-  meli_db:
+  mutant_db:
     driver: local

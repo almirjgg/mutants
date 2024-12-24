@@ -26,6 +26,7 @@ export class Human {
   public static create(human: HumanCreateProps) {
     return new Human(human);
   }
+
   public isMutant(dna: string[]): boolean {
     const matrixSize = dna.length;
     let mutationCount = 0;
